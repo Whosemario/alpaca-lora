@@ -149,7 +149,7 @@ def main(
             )
         s = generation_output.sequences[0]
         output = tokenizer.decode(s)
-        print(output)
+        # print(output)
         return prompter.get_response(output)
 
     print(device)
