@@ -2,6 +2,7 @@
 
 import fire
 import sys
+import time
 from sys import stdin
 import torch
 import transformers
@@ -166,7 +167,9 @@ def main(
         #         break
         #     ipt += line
         print("------------------------------------")
+        ts = time.time()
         print(evaluate(inst, ipt or None))
+        print("(耗时:", int(time.time()-ts), "秒)")
 
 if __name__ == "__main__":
     fire.Fire(main)
