@@ -107,6 +107,7 @@ def train(
     if len(wandb_log_model) > 0:
         os.environ["WANDB_LOG_MODEL"] = wandb_log_model
 
+    # 加载base foundation模型
     model = LlamaForCausalLM.from_pretrained(
         base_model,
         load_in_8bit=True,
